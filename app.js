@@ -164,4 +164,31 @@
     });
   }
 
+  /* ── Mobile Grid Carousel ────────────────── */
+  var grid = document.getElementById('projectsGrid');
+  var btnPrev = document.getElementById('btnPrev');
+  var btnNext = document.getElementById('btnNext');
+
+  if (grid && btnPrev && btnNext) {
+    btnNext.addEventListener('click', function() {
+      var itemWidth = grid.querySelector('.m-card').offsetWidth + 20;
+      // Se chegou no final, volta pro início suavemente
+      if (grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 10) {
+        grid.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        grid.scrollBy({ left: itemWidth, behavior: 'smooth' });
+      }
+    });
+
+    btnPrev.addEventListener('click', function() {
+      var itemWidth = grid.querySelector('.m-card').offsetWidth + 20;
+      // Se está no início, vai pro final suavemente
+      if (grid.scrollLeft <= 10) {
+        grid.scrollTo({ left: grid.scrollWidth, behavior: 'smooth' });
+      } else {
+        grid.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+      }
+    });
+  }
+
 })();

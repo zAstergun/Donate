@@ -146,14 +146,17 @@
         <p class="sec-head__sub">Algumas das ferramentas, scripts e projetos open-source que desenvolvi.</p>
       </div>
 
-      <div class="mobile-grid">
+      <div class="mobile-grid-wrapper">
+        <button class="nav-arrow nav-arrow--left" id="btnPrev" aria-label="Anterior">‹</button>
+        <button class="nav-arrow nav-arrow--right" id="btnNext" aria-label="Próximo">›</button>
+        <div class="mobile-grid" id="projectsGrid">
 
         <!-- Duo-Tools -->
         <div class="m-card">
           <div class="m-card__info">
             <div class="m-card__icon" style="padding: 6px;"><img src="assets/duo-tools/logo.png" alt="Duo-Tools Logo" style="width: 100%; height: 100%; object-fit: contain;" /></div>
             <div class="m-card__title">Duo-Tools</div>
-            <div class="m-card__desc">Ferramentas &uacute;teis para a comunidade e projetos diversos.</div>
+            <div class="m-card__desc">Extensão utilitária para o Duolingo com automação de exercícios, farming de XP e acesso aos recursos do modo Super.</div>
             <button onclick="openModal('modal-duotools')" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128229; Instalar Extens&atilde;o</button>
           </div>
           <div class="m-mockup">
@@ -166,7 +169,7 @@
           <div class="m-card__info">
             <div class="m-card__icon" style="padding: 6px;"><img src="assets/idealcalc/logo.svg" alt="IdealCalc Logo" style="width: 100%; height: 100%; object-fit: contain;" /></div>
             <div class="m-card__title">IdealCalc</div>
-            <div class="m-card__desc">Calculadora ideal na web, feita para simplificar c&aacute;lculos do cotidiano de forma pr&aacute;tica.</div>
+            <div class="m-card__desc">Calculadora web que estima a quantidade de pessoas em uma região do Brasil que se encaixam no seu perfil romântico ideal.</div>
             <a href="https://idealcalc.app/" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128279; Acessar o App</a>
           </div>
           <div class="m-mockup">
@@ -179,7 +182,7 @@
           <div class="m-card__info">
             <div class="m-card__icon">&#128126;</div>
             <div class="m-card__title">Discord Miss&otilde;es Orb</div>
-            <div class="m-card__desc">Guia / Snippet focado em Miss&otilde;es Orb do Discord especialmente para a comunidade PT-BR.</div>
+            <div class="m-card__desc">Script 100% em português que automatiza a conclusão das Missões Orb no Discord, realizando as tarefas de forma automática por você.</div>
             <a href="https://gist.github.com/zAstergun/91b0a34627ba2cda6c937c469fc4d8bc" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128196; Ver no Gist</a>
           </div>
           <div class="m-mockup">
@@ -192,7 +195,7 @@
           <div class="m-card__info">
             <div class="m-card__icon">&#127806;</div>
             <div class="m-card__title">Github Commit Farm</div>
-            <div class="m-card__desc">Script ou ferramenta em Gist para gerenciar ou farmar commits no Github de maneira automatizada.</div>
+            <div class="m-card__desc">Automação via GitHub Actions que gera commits automaticamente em repositórios privados para manter seu gráfico de contribuições ativo.</div>
             <a href="https://gist.github.com/zAstergun/665631f2f160704a0fbf39a118f6cdd5" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128196; Ver no Gist</a>
           </div>
           <div class="m-mockup">
@@ -200,6 +203,7 @@
           </div>
         </div>
 
+      </div>
       </div><!-- /mobile-grid -->
     </div>
   </section>
