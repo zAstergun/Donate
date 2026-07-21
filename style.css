@@ -381,3 +381,92 @@ body {
   .hero          { padding:64px 0 44px; }
   .section       { padding:48px 0; }
 }
+
+/* ── Theme Toggle ────────────────────────────── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  transition: background var(--trans);
+}
+.theme-toggle:hover {
+  background: rgba(26,26,46,0.06);
+}
+.theme-toggle__box {
+  width: 32px;
+  height: 18px;
+  background: rgba(26,26,46,0.15);
+  border-radius: 4px;
+  position: relative;
+  transition: background var(--trans), border-color var(--trans);
+  border: 1px solid var(--border);
+}
+.theme-toggle__box::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform var(--trans), background var(--trans);
+}
+
+/* ── Dark Mode ───────────────────────────────── */
+[data-theme="dark"] {
+  --bg:           #1a1a2e;
+  --bg-2:         #111122;
+  --card:         rgba(255,255,255,0.05);
+  --card-hover:   rgba(255,255,255,0.08);
+  --card-panel:   rgba(255,255,255,0.06);
+  --accent:       #6c63ff;
+  --accent-dim:   rgba(108,99,255,0.15);
+  --accent-muted: rgba(108,99,255,0.3);
+  --text:         #ede9d8;
+  --text-2:       rgba(237,233,216,0.7);
+  --text-3:       rgba(237,233,216,0.4);
+  --border:       rgba(255,255,255,0.08);
+  --border-acc:   rgba(108,99,255,0.32);
+  --shadow:       0 2px 16px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.1);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.4), 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-card:  0 1px 4px rgba(0,0,0,0.2);
+}
+[data-theme="dark"] .header {
+  background: rgba(26,26,46,0.85);
+}
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(255,255,255,0.06);
+}
+[data-theme="dark"] .theme-toggle__box {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+[data-theme="dark"] .theme-toggle__box::after {
+  transform: translateX(12px);
+  background: #fff;
+}
+@media(max-width:680px){
+  [data-theme="dark"] .nav__list {
+    background: rgba(26,26,46,0.97);
+  }
+}
+[data-theme="dark"] .code-box {
+  background: rgba(255,255,255,0.04);
+}
+[data-theme="dark"] .info-row__val {
+  background: rgba(0,0,0,0.2);
+}
+[data-theme="dark"] .toast {
+  background: rgba(26,26,46,0.96);
+  border-color: var(--border-acc);
+}
+[data-theme="dark"] .d-qr img {
+  background: #ede9d8;
+}

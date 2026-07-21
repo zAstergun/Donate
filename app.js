@@ -125,4 +125,32 @@
     }
   };
 
+  /* ── Theme Toggle ────────────────────────── */
+  var themeToggle = document.getElementById('themeToggle');
+  var themeIcon = document.getElementById('themeIcon');
+  var currentTheme = localStorage.getItem('theme') || 'light';
+
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeIcon.innerHTML = '&#9728;&#65039;'; // Sun icon
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeIcon.innerHTML = '&#127769;'; // Moon icon
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  // Initialize theme
+  setTheme(currentTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var isDark = document.documentElement.hasAttribute('data-theme');
+      setTheme(isDark ? 'light' : 'dark');
+    });
+  }
+
 })();
