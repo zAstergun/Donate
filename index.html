@@ -73,7 +73,7 @@
           </p>
           <div class="hero__actions">
             <a href="#ways" class="btn btn--primary">&#9889; Apoiar agora</a>
-            <a href="https://github.com/asterdev" target="_blank" rel="noopener" class="btn btn--ghost">&#9733; GitHub</a>
+            <a href="https://github.com/zAstergun" target="_blank" rel="noopener" class="btn btn--ghost">&#9733; GitHub</a>
           </div>
         </div>
 
@@ -162,7 +162,7 @@
                   <span class="info-row__lbl">Chave PIX</span>
                   <span class="info-row__val">
                     <span id="pix-key">donate@asterdev.me</span>
-                    <button class="copy-btn" onclick="copyText('pix-key')" title="Copiar">&#9014;</button>
+                    <button class="copy-btn" onclick="copyText('pix-key', event)" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
                 <div class="info-row">
@@ -183,22 +183,25 @@
           </div>
         </div>
 
-        <!-- Ko-fi / GitHub Sponsors -->
-        <div class="d-card" id="card-kofi">
-          <div class="d-card__icon">&#9749;</div>
-          <div class="d-card__title">Ko-fi / GitHub Sponsors</div>
-          <div class="d-card__desc">Me pague um cafe no Ko-fi ou apoie mensalmente pelo GitHub Sponsors. Internacional e facil.</div>
-          <button class="btn btn--primary" onclick="togglePanel('kofi')">&#128279; Ver links</button>
-          <div class="d-panel" id="panel-kofi">
+        <!-- PayPal / GitHub Sponsors -->
+        <div class="d-card" id="card-paypal">
+          <div class="d-card__icon">&#128179;</div>
+          <div class="d-card__title">PayPal / GitHub Sponsors</div>
+          <div class="d-card__desc">Apoie via PayPal de qualquer lugar do mundo ou seja um apoiador mensal pelo GitHub Sponsors.</div>
+          <button class="btn btn--primary" onclick="togglePanel('paypal')">&#128279; Ver detalhes</button>
+          <div class="d-panel" id="panel-paypal">
             <div class="d-panel__head">
-              <span class="d-panel__label">// Ko-fi &amp; GitHub Sponsors</span>
-              <button class="d-panel__close" onclick="closePanel('kofi')" aria-label="Fechar">&#215;</button>
+              <span class="d-panel__label">// PayPal &amp; GitHub Sponsors</span>
+              <button class="d-panel__close" onclick="closePanel('paypal')" aria-label="Fechar">&#215;</button>
             </div>
             <div class="d-panel__body">
               <div class="d-info">
                 <div class="info-row">
-                  <span class="info-row__lbl">Ko-fi (doacao unica)</span>
-                  <a href="https://ko-fi.com/asterdev" target="_blank" rel="noopener" class="d-link">&#9749; ko-fi.com/asterdev</a>
+                  <span class="info-row__lbl">Email PayPal</span>
+                  <span class="info-row__val">
+                    <span id="paypal-email">donate@asterdev.me</span>
+                    <button class="copy-btn" onclick="copyText('paypal-email', event)" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                  </span>
                 </div>
                 <div class="info-row">
                   <span class="info-row__lbl">GitHub Sponsors (mensal)</span>
@@ -206,13 +209,14 @@
                 </div>
                 <div class="tags">
                   <span class="tag">Internacional</span>
+                  <span class="tag">Seguro</span>
+                  <span class="tag">Cart&atilde;o aceito</span>
                   <span class="tag">Recorrente</span>
-                  <span class="tag">Cartao aceito</span>
                 </div>
               </div>
               <div class="d-qr">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https%3A%2F%2Fko-fi.com%2Fasterdev&color=6c63ff&bgcolor=ffffff" alt="QR Code Ko-fi" />
-                <p>Ko-fi</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=donate%40asterdev.me&color=6c63ff&bgcolor=ffffff" alt="QR Code PayPal" />
+                <p>Email PayPal</p>
               </div>
             </div>
           </div>
@@ -231,25 +235,25 @@
             </div>
             <div class="d-panel__body">
               <div class="d-info">
-                <div class="info-row">
-                  <span class="info-row__lbl">Bitcoin (BTC)</span>
+                <div class="info-row crypto-row active" id="row-btc" onclick="selectCrypto('btc')">
+                  <span class="info-row__lbl">Bitcoin (BTC) &middot; Rede: BTC (Bitcoin)</span>
                   <span class="info-row__val">
-                    <span id="btc">seu-endereco-btc-aqui</span>
-                    <button class="copy-btn" onclick="copyText('btc')" title="Copiar">&#9014;</button>
+                    <span id="btc">15w4YjGK39bJkF4u6wt1xyEm7WQJJdoph4</span>
+                    <button class="copy-btn" onclick="copyText('btc', event); selectCrypto('btc')" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
-                <div class="info-row">
-                  <span class="info-row__lbl">Ethereum (ETH)</span>
+                <div class="info-row crypto-row" id="row-eth" onclick="selectCrypto('eth')">
+                  <span class="info-row__lbl">Ethereum (ETH) &middot; Rede: Ethereum (ERC-20)</span>
                   <span class="info-row__val">
-                    <span id="eth">seu-endereco-eth-aqui</span>
-                    <button class="copy-btn" onclick="copyText('eth')" title="Copiar">&#9014;</button>
+                    <span id="eth">0xc615672922547a88cebc28d01e8112b5f3605830</span>
+                    <button class="copy-btn" onclick="copyText('eth', event); selectCrypto('eth')" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
-                <div class="info-row">
-                  <span class="info-row__lbl">Solana (SOL)</span>
+                <div class="info-row crypto-row" id="row-sol" onclick="selectCrypto('sol')">
+                  <span class="info-row__lbl">Solana (SOL) &middot; Rede: Solana</span>
                   <span class="info-row__val">
-                    <span id="sol">seu-endereco-sol-aqui</span>
-                    <button class="copy-btn" onclick="copyText('sol')" title="Copiar">&#9014;</button>
+                    <span id="sol">9TmYnAetZindLo6C1H4k5Jhzf2btcpHqaoinqEteitgv</span>
+                    <button class="copy-btn" onclick="copyText('sol', event); selectCrypto('sol')" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
                 <div class="tags">
@@ -258,8 +262,9 @@
                 </div>
               </div>
               <div class="d-qr">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=bitcoin%3Aseu-endereco-btc&color=6c63ff&bgcolor=ffffff" alt="QR Code BTC" />
-                <p>BTC address</p>
+                <img id="crypto-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=15w4YjGK39bJkF4u6wt1xyEm7WQJJdoph4&color=6c63ff&bgcolor=ffffff" alt="QR Code" />
+                <p id="crypto-qr-lbl">BTC address</p>
+                <span class="qr-notice">Clique em um endere&ccedil;o ao lado para exibir seu QR Code</span>
               </div>
             </div>
           </div>
@@ -279,7 +284,7 @@
             <div class="d-panel__body">
               <div class="d-info">
                 <ul class="free-list">
-                  <li>&#11088; De uma estrela nos repos do <a href="https://github.com/asterdev" target="_blank" rel="noopener">GitHub</a></li>
+                  <li>&#11088; De uma estrela nos repos do <a href="https://github.com/zAstergun" target="_blank" rel="noopener">GitHub</a></li>
                   <li>&#128257; Compartilhe meus projetos com outros devs</li>
                   <li>&#128027; Reporte bugs e abra issues</li>
                   <li>&#128161; Sugira novas features e melhorias</li>
@@ -310,6 +315,9 @@
         <p class="sec-head__tag">hall da fama</p>
         <h2 class="sec-head__title">Nossos <span class="accent">apoiadores</span></h2>
         <p class="sec-head__sub">Obrigado a todas as pessoas incriveis que tornaram isso possivel. &#128156;</p>
+        <div class="sup-notice">
+          Quer seu nome aqui? Envie o comprovante e o nome desejado para <a href="mailto:donate@asterdev.me">donate@asterdev.me</a> ou via Discord (<strong>douglasluiz</strong>).
+        </div>
       </div>
       <div class="empty-box">
         <span class="accent">// </span>Seja o primeiro a apoiar! Seu nome aparecera aqui. &#127775;
@@ -332,7 +340,7 @@
         <p class="footer__copy">&#169; 2025 <a href="https://asterdev.me">Aster Dev</a> &middot; Feito com &#128156; e muito cafe</p>
         <div class="footer__links">
           <a href="https://asterdev.me">Portfolio</a>
-          <a href="https://github.com/asterdev" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/zAstergun" target="_blank" rel="noopener">GitHub</a>
           <a href="mailto:donate@asterdev.me">Email</a>
         </div>
       </div>
