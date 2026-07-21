@@ -43,6 +43,17 @@
     document.getElementById('panel-' + id).classList.remove('open');
   };
 
+  /* ── Modal toggle ──────────────────────────── */
+  window.openModal = function (id) {
+    var modal = document.getElementById(id);
+    if (modal) modal.classList.add('open');
+  };
+
+  window.closeModal = function (id) {
+    var modal = document.getElementById(id);
+    if (modal) modal.classList.remove('open');
+  };
+
   /* ── Copy to clipboard ───────────────────── */
   window.copyText = function (elId, e) {
     if (e) e.stopPropagation();
