@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apoie o desenvolvimento de projetos open-source do Aster Dev. Cada contribuicao ajuda a manter ferramentas gratuitas para a comunidade." />
+  <meta name="theme-color" content="#ede9d8" />
+  <title>Apoie &middot; Aster Dev</title>
+
+  <link rel="icon" type="image/svg+xml" href="https://asterdev.me/favicon.svg" />
+  <link rel="canonical" href="https://donate.asterdev.me" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://donate.asterdev.me" />
+  <meta property="og:title"       content="Apoie o Aster Dev" />
+  <meta property="og:description" content="Ajude a manter projetos open-source gratuitos para a comunidade." />
+  <meta property="og:image"       content="https://asterdev.me/og-image2.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Background glows -->
+<div class="bg-glow bg-glow--1"></div>
+<div class="bg-glow bg-glow--2"></div>
+
+<div class="wrapper">
+
+  <!-- ── HEADER ──────────────────────────────── -->
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+
+        <a href="https://asterdev.me" class="logo">
+          <span class="logo__dot"></span>
+          <span class="logo__name"><em>Aster</em>Dev</span>
+        </a>
+
+        <nav>
+          <ul class="nav__list" id="navList">
+            <li><a href="https://asterdev.me" class="nav__link"><span class="hash">#</span>home</a></li>
+            <li><a href="#ways"       class="nav__link"><span class="hash">#</span>apoiar</a></li>
+            <li><a href="#supporters" class="nav__link"><span class="hash">#</span>apoiadores</a></li>
+          </ul>
+          <button class="nav__mob" id="mobBtn" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ── HERO ────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+
+        <div>
+          <p class="hero__eyebrow">support open-source</p>
+          <h1 class="hero__title">Apoie meu<br><span class="accent">trabalho</span></h1>
+          <p class="hero__desc">
+            Seu apoio me ajuda a continuar desenvolvendo ferramentas gratuitas,
+            projetos open-source e conteudo para a comunidade de devs.
+            Cada contribuicao faz a diferenca. &#128156;
+          </p>
+          <div class="hero__actions">
+            <a href="#ways" class="btn btn--primary">&#9889; Apoiar agora</a>
+            <a href="https://github.com/asterdev" target="_blank" rel="noopener" class="btn btn--ghost">&#9733; GitHub</a>
+          </div>
+        </div>
+
+        <!-- Decorative code card -->
+        <div class="code-box">
+          <div class="code-bar">
+            <span class="dot dot-r"></span>
+            <span class="dot dot-y"></span>
+            <span class="dot dot-g"></span>
+            <span class="code-bar__file">support.ts</span>
+          </div>
+          <div class="code-body">
+            <div class="cl"><span class="ln">1</span><span class="cmt">// &#10022; Aster Dev &mdash; support</span></div>
+            <div class="cl"><span class="ln">2</span><span></span></div>
+            <div class="cl"><span class="ln">3</span><span class="kw">interface</span><span class="tx"> </span><span class="fn">Supporter</span><span class="tx"> {</span></div>
+            <div class="cl"><span class="ln">4</span><span class="tx">&nbsp;&nbsp;name:&nbsp;&nbsp; </span><span class="kw">string</span><span class="tx">;</span></div>
+            <div class="cl"><span class="ln">5</span><span class="tx">&nbsp;&nbsp;amount: </span><span class="kw">number</span><span class="tx">;</span></div>
+            <div class="cl"><span class="ln">6</span><span class="tx">&nbsp;&nbsp;impact: </span><span class="str">"huge"</span><span class="tx">;</span></div>
+            <div class="cl"><span class="ln">7</span><span class="tx">}</span></div>
+            <div class="cl"><span class="ln">8</span><span></span></div>
+            <div class="cl"><span class="ln">9</span><span class="kw">const</span><span class="tx"> </span><span class="fn">donate</span><span class="tx"> = (</span><span class="acc">you</span><span class="tx">: </span><span class="fn">Supporter</span><span class="tx">) =&gt; {</span></div>
+            <div class="cl"><span class="ln">10</span><span class="tx">&nbsp;&nbsp;return </span><span class="str">"muito obrigado &#128156;"</span><span class="tx">;</span></div>
+            <div class="cl"><span class="ln">11</span><span class="tx">};</span></div>
+            <div class="cl"><span class="ln">12</span><span></span></div>
+            <div class="cl"><span class="ln">13</span><span class="fn">donate</span><span class="tx">({</span></div>
+            <div class="cl"><span class="ln">14</span><span class="tx">&nbsp;&nbsp;name: </span><span class="str">"voce"</span><span class="tx">,</span></div>
+            <div class="cl"><span class="ln">15</span><span class="tx">&nbsp;&nbsp;amount: </span><span class="num">any</span><span class="tx">, impact: </span><span class="str">"huge"</span></div>
+            <div class="cl"><span class="ln">16</span><span class="tx">});</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS ────────────────────────────────── -->
+  <div class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat">
+          <div class="stat__val">10+</div>
+          <div class="stat__lbl">Projetos ativos</div>
+        </div>
+        <div class="stat">
+          <div class="stat__val">100%</div>
+          <div class="stat__lbl">Open-source &amp; gratuito</div>
+        </div>
+        <div class="stat">
+          <div class="stat__val">&#8734;</div>
+          <div class="stat__lbl">Gratidao pelo apoio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WAYS TO SUPPORT ──────────────────────── -->
+  <section class="section" id="ways">
+    <div class="container">
+
+      <div class="sec-head">
+        <p class="sec-head__tag">formas de apoio</p>
+        <h2 class="sec-head__title">Como <span class="accent">contribuir</span></h2>
+        <p class="sec-head__sub">Escolha a forma que preferir &mdash; qualquer valor ou gesto e muito bem-vindo!</p>
+      </div>
+
+      <div class="donate-grid">
+
+        <!-- PIX -->
+        <div class="d-card" id="card-pix">
+          <div class="d-card__icon">&#127463;&#127479;</div>
+          <div class="d-card__title">PIX</div>
+          <div class="d-card__desc">Transferencia instantanea e sem taxas. A forma mais rapida de contribuir dentro do Brasil.</div>
+          <button class="btn btn--primary" onclick="togglePanel('pix')">&#128203; Ver chave PIX</button>
+          <div class="d-panel" id="panel-pix">
+            <div class="d-panel__head">
+              <span class="d-panel__label">// PIX &mdash; chave de pagamento</span>
+              <button class="d-panel__close" onclick="closePanel('pix')" aria-label="Fechar">&#215;</button>
+            </div>
+            <div class="d-panel__body">
+              <div class="d-info">
+                <div class="info-row">
+                  <span class="info-row__lbl">Tipo de chave</span>
+                  <span class="info-row__val">E-mail</span>
+                </div>
+                <div class="info-row">
+                  <span class="info-row__lbl">Chave PIX</span>
+                  <span class="info-row__val">
+                    <span id="pix-key">donate@asterdev.me</span>
+                    <button class="copy-btn" onclick="copyText('pix-key')" title="Copiar">&#9014;</button>
+                  </span>
+                </div>
+                <div class="info-row">
+                  <span class="info-row__lbl">Favorecido</span>
+                  <span class="info-row__val">Aster Dev</span>
+                </div>
+                <div class="tags">
+                  <span class="tag">Sem taxas</span>
+                  <span class="tag">Instantaneo</span>
+                  <span class="tag">Qualquer valor</span>
+                </div>
+              </div>
+              <div class="d-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=donate%40asterdev.me&color=6c63ff&bgcolor=ffffff" alt="QR Code PIX" />
+                <p>Escaneie para pagar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ko-fi / GitHub Sponsors -->
+        <div class="d-card" id="card-kofi">
+          <div class="d-card__icon">&#9749;</div>
+          <div class="d-card__title">Ko-fi / GitHub Sponsors</div>
+          <div class="d-card__desc">Me pague um cafe no Ko-fi ou apoie mensalmente pelo GitHub Sponsors. Internacional e facil.</div>
+          <button class="btn btn--primary" onclick="togglePanel('kofi')">&#128279; Ver links</button>
+          <div class="d-panel" id="panel-kofi">
+            <div class="d-panel__head">
+              <span class="d-panel__label">// Ko-fi &amp; GitHub Sponsors</span>
+              <button class="d-panel__close" onclick="closePanel('kofi')" aria-label="Fechar">&#215;</button>
+            </div>
+            <div class="d-panel__body">
+              <div class="d-info">
+                <div class="info-row">
+                  <span class="info-row__lbl">Ko-fi (doacao unica)</span>
+                  <a href="https://ko-fi.com/asterdev" target="_blank" rel="noopener" class="d-link">&#9749; ko-fi.com/asterdev</a>
+                </div>
+                <div class="info-row">
+                  <span class="info-row__lbl">GitHub Sponsors (mensal)</span>
+                  <a href="https://github.com/sponsors/zAstergun" target="_blank" rel="noopener" class="d-link">&#9733; github.com/sponsors/zAstergun</a>
+                </div>
+                <div class="tags">
+                  <span class="tag">Internacional</span>
+                  <span class="tag">Recorrente</span>
+                  <span class="tag">Cartao aceito</span>
+                </div>
+              </div>
+              <div class="d-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=https%3A%2F%2Fko-fi.com%2Fasterdev&color=6c63ff&bgcolor=ffffff" alt="QR Code Ko-fi" />
+                <p>Ko-fi</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Crypto -->
+        <div class="d-card" id="card-crypto">
+          <div class="d-card__icon">&#9935;&#65039;</div>
+          <div class="d-card__title">Criptomoedas</div>
+          <div class="d-card__desc">Aceito BTC, ETH e SOL. Descentralizado, sem fronteiras e totalmente anonimo.</div>
+          <button class="btn btn--primary" onclick="togglePanel('crypto')">&#128273; Ver enderecos</button>
+          <div class="d-panel" id="panel-crypto">
+            <div class="d-panel__head">
+              <span class="d-panel__label">// carteiras cripto</span>
+              <button class="d-panel__close" onclick="closePanel('crypto')" aria-label="Fechar">&#215;</button>
+            </div>
+            <div class="d-panel__body">
+              <div class="d-info">
+                <div class="info-row">
+                  <span class="info-row__lbl">Bitcoin (BTC)</span>
+                  <span class="info-row__val">
+                    <span id="btc">seu-endereco-btc-aqui</span>
+                    <button class="copy-btn" onclick="copyText('btc')" title="Copiar">&#9014;</button>
+                  </span>
+                </div>
+                <div class="info-row">
+                  <span class="info-row__lbl">Ethereum (ETH)</span>
+                  <span class="info-row__val">
+                    <span id="eth">seu-endereco-eth-aqui</span>
+                    <button class="copy-btn" onclick="copyText('eth')" title="Copiar">&#9014;</button>
+                  </span>
+                </div>
+                <div class="info-row">
+                  <span class="info-row__lbl">Solana (SOL)</span>
+                  <span class="info-row__val">
+                    <span id="sol">seu-endereco-sol-aqui</span>
+                    <button class="copy-btn" onclick="copyText('sol')" title="Copiar">&#9014;</button>
+                  </span>
+                </div>
+                <div class="tags">
+                  <span class="tag">BTC</span><span class="tag">ETH</span>
+                  <span class="tag">SOL</span><span class="tag">Anonimo</span>
+                </div>
+              </div>
+              <div class="d-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=bitcoin%3Aseu-endereco-btc&color=6c63ff&bgcolor=ffffff" alt="QR Code BTC" />
+                <p>BTC address</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free support -->
+        <div class="d-card" id="card-free">
+          <div class="d-card__icon">&#127775;</div>
+          <div class="d-card__title">Apoio gratuito</div>
+          <div class="d-card__desc">Sem dinheiro? Sem problema! Existem formas igualmente valiosas de ajudar o projeto.</div>
+          <button class="btn btn--ghost" onclick="togglePanel('free')">&#128161; Ver como ajudar</button>
+          <div class="d-panel" id="panel-free">
+            <div class="d-panel__head">
+              <span class="d-panel__label">// formas gratuitas de contribuir</span>
+              <button class="d-panel__close" onclick="closePanel('free')" aria-label="Fechar">&#215;</button>
+            </div>
+            <div class="d-panel__body">
+              <div class="d-info">
+                <ul class="free-list">
+                  <li>&#11088; De uma estrela nos repos do <a href="https://github.com/asterdev" target="_blank" rel="noopener">GitHub</a></li>
+                  <li>&#128257; Compartilhe meus projetos com outros devs</li>
+                  <li>&#128027; Reporte bugs e abra issues</li>
+                  <li>&#128161; Sugira novas features e melhorias</li>
+                  <li>&#128221; Contribua com codigo &mdash; PRs sao bem-vindos!</li>
+                  <li>&#128483;&#65039; Fale sobre meu trabalho nas redes sociais</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /donate-grid -->
+    </div>
+  </section>
+
+  <!-- ── QUOTE ────────────────────────────────── -->
+  <div class="container">
+    <blockquote class="quote">
+      <p class="quote__text">"Cada linha de codigo que escrevo e feita com muito carinho para a comunidade. Seu apoio &mdash; financeiro ou um simples star no GitHub &mdash; me motiva a continuar criando ferramentas que tornam a vida dos devs mais facil e divertida."</p>
+      <cite class="quote__author">&mdash; Aster Dev &#10022;</cite>
+    </blockquote>
+  </div>
+
+  <!-- ── SUPPORTERS ──────────────────────────── -->
+  <section class="section" id="supporters">
+    <div class="container">
+      <div class="sec-head">
+        <p class="sec-head__tag">hall da fama</p>
+        <h2 class="sec-head__title">Nossos <span class="accent">apoiadores</span></h2>
+        <p class="sec-head__sub">Obrigado a todas as pessoas incriveis que tornaram isso possivel. &#128156;</p>
+      </div>
+      <div class="empty-box">
+        <span class="accent">// </span>Seja o primeiro a apoiar! Seu nome aparecera aqui. &#127775;
+      </div>
+      <!-- Para adicionar apoiadores, substitua o empty-box pelo bloco abaixo:
+      <div class="supporters-grid">
+        <div class="sup-chip">
+          <div class="sup-chip__av">&#128075;</div>
+          <span>Nome do Apoiador</span>
+        </div>
+      </div>
+      -->
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">&#169; 2025 <a href="https://asterdev.me">Aster Dev</a> &middot; Feito com &#128156; e muito cafe</p>
+        <div class="footer__links">
+          <a href="https://asterdev.me">Portfolio</a>
+          <a href="https://github.com/asterdev" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:donate@asterdev.me">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /wrapper -->
+
+<div class="toast" id="toast">&#10003; Copiado!</div>
+
+<!-- Script -->
+<script src="app.js"></script>
+</body>
+</html>
