@@ -31,13 +31,15 @@ A plataforma conta com uma interface clean e direta para recebimento de apoios, 
 
 ## 🛠️ Como Executar
 
-Por ser um projeto estático puramente frontend, não há necessidade de servidor ou build steps. Basta clonar e rodar:
+Por utilizar a API `fetch()` para o sistema de internacionalização (i18n), o projeto precisa ser executado através de um servidor web local para evitar bloqueios de CORS (Cross-Origin Resource Sharing) no navegador.
 
+1. Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/donate-page.git
 cd donate-page
 ```
-Abra o arquivo `index.html` em qualquer navegador.
+2. Abra a pasta em um editor como o VSCode.
+3. Utilize a extensão **Live Server** (ou rode `npx serve`) para abrir o `index.html`. O projeto não funcionará corretamente se você apenas clicar duas vezes no arquivo `index.html` (protocolo `file:///`).
 
 ---
 **Desenvolvido com dedicação por Aster.**

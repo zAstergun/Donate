@@ -96,6 +96,38 @@ body {
 .nav__link:hover { color:var(--text);background:rgba(26,26,46,0.06); }
 .nav__link .hash { color:var(--accent); }
 
+/* Lang Selector */
+.lang-selector { position: relative; margin: 0 4px; }
+.lang-btn {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text); font-family: var(--mono); font-size: 12px;
+  padding: 5px 10px; border-radius: var(--radius-sm);
+  cursor: pointer; display: flex; align-items: center; gap: 6px;
+  transition: all var(--trans);
+}
+.lang-btn:hover { background: rgba(26,26,46,0.06); }
+.lang-dropdown {
+  position: absolute; top: calc(100% + 5px); right: 0;
+  background: var(--card-panel); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow-hover);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  width: 140px; max-height: 220px; overflow-y: auto;
+  display: flex; flex-direction: column; padding: 4px 0;
+  opacity: 0; visibility: hidden; transform: translateY(-5px);
+  transition: all var(--trans); z-index: 100;
+}
+.lang-dropdown.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.lang-option {
+  background: transparent; border: none; width: 100%;
+  text-align: left; padding: 8px 12px; font-family: var(--mono);
+  font-size: 12px; color: var(--text-2); cursor: pointer;
+  transition: all var(--trans);
+}
+.lang-option:hover { background: rgba(26,26,46,0.06); color: var(--text); }
+.lang-option.active { color: var(--accent); font-weight: 700; background: var(--accent-dim); }
+.lang-dropdown::-webkit-scrollbar { width: 4px; }
+.lang-dropdown::-webkit-scrollbar-thumb { background: var(--text-3); border-radius: 4px; }
+
 .nav__mob {
   display:none;flex-direction:column;gap:5px;
   background:none;border:none;cursor:pointer;padding:4px;

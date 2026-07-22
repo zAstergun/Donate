@@ -45,10 +45,20 @@
 
         <nav>
           <ul class="nav__list" id="navList">
-            <li><a href="https://asterdev.me" class="nav__link"><span class="hash">#</span>home</a></li>
-            <li><a href="#projects"   class="nav__link"><span class="hash">#</span>projetos</a></li>
-            <li><a href="#ways"       class="nav__link"><span class="hash">#</span>apoiar</a></li>
-            <li><a href="#supporters" class="nav__link"><span class="hash">#</span>apoiadores</a></li>
+            <li><a href="https://asterdev.me" class="nav__link"><span class="hash">#</span><span data-i18n="nav_home">home</span></a></li>
+            <li><a href="#projects"   class="nav__link"><span class="hash">#</span><span data-i18n="nav_projects">projetos</span></a></li>
+            <li><a href="#ways"       class="nav__link"><span class="hash">#</span><span data-i18n="nav_support">apoiar</span></a></li>
+            <li><a href="#supporters" class="nav__link"><span class="hash">#</span><span data-i18n="nav_supporters">apoiadores</span></a></li>
+            <li>
+              <div class="lang-selector" id="langSelector">
+                <button class="lang-btn" id="langBtn" type="button" aria-label="Mudar idioma">
+                  <span class="lang-icon">🌐</span> <span id="currentLang">PT-BR</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                  <!-- Populate via JS -->
+                </div>
+              </div>
+            </li>
             <li>
               <button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar tema">
                 <span id="themeIcon">&#127769;</span>
@@ -71,16 +81,16 @@
       <div class="hero__grid">
 
         <div>
-          <p class="hero__eyebrow">support open-source</p>
-          <h1 class="hero__title">Apoie meu<br><span class="accent">trabalho</span></h1>
-          <p class="hero__desc">
+          <p class="hero__eyebrow" data-i18n="hero_eyebrow">support open-source</p>
+          <h1 class="hero__title"><span data-i18n="hero_title_1">Apoie meu</span><br><span class="accent" data-i18n="hero_title_2">trabalho</span></h1>
+          <p class="hero__desc" data-i18n="hero_desc">
             Seu apoio me ajuda a continuar desenvolvendo ferramentas gratuitas,
             projetos open-source e conteudo para a comunidade de devs.
             Cada contribuicao faz a diferenca. &#128156;
           </p>
           <div class="hero__actions">
-            <a href="#ways" class="btn btn--primary">&#9889; Apoiar agora</a>
-            <a href="https://github.com/zAstergun" target="_blank" rel="noopener" class="btn btn--ghost">&#9733; GitHub</a>
+            <a href="#ways" class="btn btn--primary" data-i18n="btn_support_now">&#9889; Apoiar agora</a>
+            <a href="https://github.com/zAstergun" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="btn_github">&#9733; GitHub</a>
           </div>
         </div>
 
@@ -122,15 +132,15 @@
       <div class="stats__grid">
         <div class="stat">
           <div class="stat__val">4+</div>
-          <div class="stat__lbl">Projetos ativos</div>
+          <div class="stat__lbl" data-i18n="stat_active">Projetos ativos</div>
         </div>
         <div class="stat">
           <div class="stat__val">100%</div>
-          <div class="stat__lbl">Open-source &amp; gratuito</div>
+          <div class="stat__lbl" data-i18n="stat_open">Open-source &amp; gratuito</div>
         </div>
         <div class="stat">
           <div class="stat__val">&#8734;</div>
-          <div class="stat__lbl">Gratidao pelo apoio</div>
+          <div class="stat__lbl" data-i18n="stat_gratitude">Gratidao pelo apoio</div>
         </div>
       </div>
     </div>
@@ -141,14 +151,14 @@
     <div class="container">
 
       <div class="sec-head">
-        <p class="sec-head__tag">minhas cria&ccedil;&otilde;es</p>
-        <h2 class="sec-head__title">Projetos <span class="accent">Ativos</span></h2>
-        <p class="sec-head__sub">Algumas das ferramentas, scripts e projetos open-source que desenvolvi.</p>
+        <p class="sec-head__tag" data-i18n="sec_projects_tag">minhas cria&ccedil;&otilde;es</p>
+        <h2 class="sec-head__title"><span data-i18n="sec_projects_title_1">Projetos</span> <span class="accent" data-i18n="sec_projects_title_2">Ativos</span></h2>
+        <p class="sec-head__sub" data-i18n="sec_projects_sub">Algumas das ferramentas, scripts e projetos open-source que desenvolvi.</p>
       </div>
 
       <div class="mobile-grid-wrapper">
-        <button class="nav-arrow nav-arrow--left" id="btnPrev" aria-label="Anterior">‹</button>
-        <button class="nav-arrow nav-arrow--right" id="btnNext" aria-label="Próximo">›</button>
+        <button class="nav-arrow nav-arrow--left" id="btnPrev" aria-label="Anterior" data-i18n="btn_prev">‹</button>
+        <button class="nav-arrow nav-arrow--right" id="btnNext" aria-label="Próximo" data-i18n="btn_next">›</button>
         <div class="mobile-grid" id="projectsGrid">
 
         <!-- Duo-Tools -->
@@ -156,8 +166,8 @@
           <div class="m-card__info">
             <div class="m-card__icon" style="padding: 6px;"><img src="assets/duo-tools/logo.png" alt="Duo-Tools Logo" style="width: 100%; height: 100%; object-fit: contain;" /></div>
             <div class="m-card__title">Duo-Tools</div>
-            <div class="m-card__desc">Extensão utilitária para o Duolingo com automação de exercícios, farming de XP e acesso aos recursos do modo Super.</div>
-            <button onclick="openModal('modal-duotools')" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128229; Instalar Extens&atilde;o</button>
+            <div class="m-card__desc" data-i18n="duotools_desc">Extensão utilitária para o Duolingo com automação de exercícios, farming de XP e acesso aos recursos do modo Super.</div>
+            <button onclick="openModal('modal-duotools')" class="btn btn--primary" style="width: 100%; justify-content: center;" data-i18n="btn_install_ext">&#128229; Instalar Extens&atilde;o</button>
           </div>
           <div class="m-mockup">
             <img src="assets/duo_tools.png" alt="Duo-Tools Interface" loading="lazy" />
@@ -169,8 +179,8 @@
           <div class="m-card__info">
             <div class="m-card__icon" style="padding: 6px;"><img src="assets/idealcalc/logo.svg" alt="IdealCalc Logo" style="width: 100%; height: 100%; object-fit: contain;" /></div>
             <div class="m-card__title">IdealCalc</div>
-            <div class="m-card__desc">Calculadora web que estima a quantidade de pessoas em uma região do Brasil que se encaixam no seu perfil romântico ideal.</div>
-            <a href="https://idealcalc.app/" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128279; Acessar o App</a>
+            <div class="m-card__desc" data-i18n="idealcalc_desc">Calculadora web que estima a quantidade de pessoas em uma região do Brasil que se encaixam no seu perfil romântico ideal.</div>
+            <a href="https://idealcalc.app/" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;" data-i18n="btn_access_app">&#128279; Acessar o App</a>
           </div>
           <div class="m-mockup">
             <img src="assets/idealcalc.png" alt="IdealCalc Interface" loading="lazy" />
@@ -182,8 +192,8 @@
           <div class="m-card__info">
             <div class="m-card__icon">&#128126;</div>
             <div class="m-card__title">Discord Miss&otilde;es Orb</div>
-            <div class="m-card__desc">Script 100% em português que automatiza a conclusão das Missões Orb no Discord, realizando as tarefas de forma automática por você.</div>
-            <a href="https://gist.github.com/zAstergun/91b0a34627ba2cda6c937c469fc4d8bc" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128196; Ver no Gist</a>
+            <div class="m-card__desc" data-i18n="discord_desc">Script 100% em português que automatiza a conclusão das Missões Orb no Discord, realizando as tarefas de forma automática por você.</div>
+            <a href="https://gist.github.com/zAstergun/91b0a34627ba2cda6c937c469fc4d8bc" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;" data-i18n="btn_view_gist">&#128196; Ver no Gist</a>
           </div>
           <div class="m-mockup">
             <img src="assets/discord_orb.png" alt="Discord Missões Orb Interface" loading="lazy" />
@@ -195,8 +205,8 @@
           <div class="m-card__info">
             <div class="m-card__icon">&#127806;</div>
             <div class="m-card__title">Github Commit Farm</div>
-            <div class="m-card__desc">Automação via GitHub Actions que gera commits automaticamente em repositórios privados para manter seu gráfico de contribuições ativo.</div>
-            <a href="https://gist.github.com/zAstergun/665631f2f160704a0fbf39a118f6cdd5" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;">&#128196; Ver no Gist</a>
+            <div class="m-card__desc" data-i18n="github_desc">Automação via GitHub Actions que gera commits automaticamente em repositórios privados para manter seu gráfico de contribuições ativo.</div>
+            <a href="https://gist.github.com/zAstergun/665631f2f160704a0fbf39a118f6cdd5" target="_blank" rel="noopener" class="btn btn--primary" style="width: 100%; justify-content: center;" data-i18n="btn_view_gist">&#128196; Ver no Gist</a>
           </div>
           <div class="m-mockup">
             <img src="assets/commit_farm.png" alt="Github Commit Farm Interface" loading="lazy" />
@@ -213,9 +223,9 @@
     <div class="container">
 
       <div class="sec-head">
-        <p class="sec-head__tag">formas de apoio</p>
-        <h2 class="sec-head__title">Como <span class="accent">contribuir</span></h2>
-        <p class="sec-head__sub">Escolha a forma que preferir &mdash; qualquer valor ou gesto e muito bem-vindo!</p>
+        <p class="sec-head__tag" data-i18n="sec_ways_tag">formas de apoio</p>
+        <h2 class="sec-head__title"><span data-i18n="sec_ways_title_1">Como</span> <span class="accent" data-i18n="sec_ways_title_2">contribuir</span></h2>
+        <p class="sec-head__sub" data-i18n="sec_ways_sub">Escolha a forma que preferir &mdash; qualquer valor ou gesto e muito bem-vindo!</p>
       </div>
 
       <div class="donate-grid">
@@ -224,39 +234,39 @@
         <div class="d-card" id="card-pix">
           <div class="d-card__icon">&#127463;&#127479;</div>
           <div class="d-card__title">PIX</div>
-          <div class="d-card__desc">Transferencia instantanea e sem taxas. A forma mais rapida de contribuir dentro do Brasil.</div>
-          <button class="btn btn--primary" onclick="togglePanel('pix')">&#128203; Ver chave PIX</button>
+          <div class="d-card__desc" data-i18n="pix_desc">Transferencia instantanea e sem taxas. A forma mais rapida de contribuir dentro do Brasil.</div>
+          <button class="btn btn--primary" onclick="togglePanel('pix')" data-i18n="btn_view_pix">&#128203; Ver chave PIX</button>
           <div class="d-panel" id="panel-pix">
             <div class="d-panel__head">
-              <span class="d-panel__label">// PIX &mdash; chave de pagamento</span>
+              <span class="d-panel__label" data-i18n="pix_panel_lbl">// PIX &mdash; chave de pagamento</span>
               <button class="d-panel__close" onclick="closePanel('pix')" aria-label="Fechar">&#215;</button>
             </div>
             <div class="d-panel__body">
               <div class="d-info">
                 <div class="info-row">
-                  <span class="info-row__lbl">Tipo de chave</span>
-                  <span class="info-row__val">E-mail</span>
+                  <span class="info-row__lbl" data-i18n="pix_key_type">Tipo de chave</span>
+                  <span class="info-row__val" data-i18n="pix_key_val">E-mail</span>
                 </div>
                 <div class="info-row">
-                  <span class="info-row__lbl">Chave PIX</span>
+                  <span class="info-row__lbl" data-i18n="pix_key_lbl">Chave PIX</span>
                   <span class="info-row__val">
                     <span id="pix-key">donate@asterdev.me</span>
                     <button class="copy-btn" onclick="copyText('pix-key', event)" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
                 <div class="info-row">
-                  <span class="info-row__lbl">Favorecido</span>
-                  <span class="info-row__val">Aster Dev</span>
+                  <span class="info-row__lbl" data-i18n="pix_fav_lbl">Favorecido</span>
+                  <span class="info-row__val" data-i18n="pix_fav_val">Aster Dev</span>
                 </div>
                 <div class="tags">
-                  <span class="tag">Sem taxas</span>
-                  <span class="tag">Instantaneo</span>
-                  <span class="tag">Qualquer valor</span>
+                  <span class="tag" data-i18n="tag_no_fee">Sem taxas</span>
+                  <span class="tag" data-i18n="tag_instant">Instantaneo</span>
+                  <span class="tag" data-i18n="tag_any_value">Qualquer valor</span>
                 </div>
               </div>
               <div class="d-qr">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=donate%40asterdev.me&color=6c63ff&bgcolor=ffffff" alt="QR Code PIX" />
-                <p>Escaneie para pagar</p>
+                <p data-i18n="scan_to_pay">Escaneie para pagar</p>
               </div>
             </div>
           </div>
@@ -266,31 +276,31 @@
         <div class="d-card" id="card-paypal">
           <div class="d-card__icon">&#128179;</div>
           <div class="d-card__title">PayPal / GitHub Sponsors</div>
-          <div class="d-card__desc">Apoie via PayPal de qualquer lugar do mundo ou seja um apoiador mensal pelo GitHub Sponsors.</div>
-          <button class="btn btn--primary" onclick="togglePanel('paypal')">&#128279; Ver detalhes</button>
+          <div class="d-card__desc" data-i18n="paypal_desc">Apoie via PayPal de qualquer lugar do mundo ou seja um apoiador mensal pelo GitHub Sponsors.</div>
+          <button class="btn btn--primary" onclick="togglePanel('paypal')" data-i18n="btn_view_details">&#128279; Ver detalhes</button>
           <div class="d-panel" id="panel-paypal">
             <div class="d-panel__head">
-              <span class="d-panel__label">// PayPal &amp; GitHub Sponsors</span>
+              <span class="d-panel__label" data-i18n="paypal_panel_lbl">// PayPal &amp; GitHub Sponsors</span>
               <button class="d-panel__close" onclick="closePanel('paypal')" aria-label="Fechar">&#215;</button>
             </div>
             <div class="d-panel__body">
               <div class="d-info">
                 <div class="info-row">
-                  <span class="info-row__lbl">Email PayPal</span>
+                  <span class="info-row__lbl" data-i18n="paypal_email">Email PayPal</span>
                   <span class="info-row__val">
                     <span id="paypal-email">donate@asterdev.me</span>
                     <button class="copy-btn" onclick="copyText('paypal-email', event)" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
                 <div class="info-row">
-                  <span class="info-row__lbl">GitHub Sponsors (mensal)</span>
+                  <span class="info-row__lbl" data-i18n="paypal_monthly">GitHub Sponsors (mensal)</span>
                   <a href="https://github.com/sponsors/zAstergun" target="_blank" rel="noopener" class="d-link">&#9733; github.com/sponsors/zAstergun</a>
                 </div>
                 <div class="tags">
-                  <span class="tag">Internacional</span>
-                  <span class="tag">Seguro</span>
-                  <span class="tag">Cart&atilde;o aceito</span>
-                  <span class="tag">Recorrente</span>
+                  <span class="tag" data-i18n="tag_intl">Internacional</span>
+                  <span class="tag" data-i18n="tag_secure">Seguro</span>
+                  <span class="tag" data-i18n="tag_card">Cart&atilde;o aceito</span>
+                  <span class="tag" data-i18n="tag_recurring">Recorrente</span>
                 </div>
               </div>
               <div class="d-qr">
@@ -304,32 +314,32 @@
         <!-- Crypto -->
         <div class="d-card" id="card-crypto">
           <div class="d-card__icon">&#9935;&#65039;</div>
-          <div class="d-card__title">Criptomoedas</div>
-          <div class="d-card__desc">Aceito BTC, ETH e SOL. Descentralizado, sem fronteiras e totalmente anonimo.</div>
-          <button class="btn btn--primary" onclick="togglePanel('crypto')">&#128273; Ver enderecos</button>
+          <div class="d-card__title" data-i18n="crypto_title">Criptomoedas</div>
+          <div class="d-card__desc" data-i18n="crypto_desc">Aceito BTC, ETH e SOL. Descentralizado, sem fronteiras e totalmente anonimo.</div>
+          <button class="btn btn--primary" onclick="togglePanel('crypto')" data-i18n="btn_view_addr">&#128273; Ver enderecos</button>
           <div class="d-panel" id="panel-crypto">
             <div class="d-panel__head">
-              <span class="d-panel__label">// carteiras cripto</span>
+              <span class="d-panel__label" data-i18n="crypto_panel_lbl">// carteiras cripto</span>
               <button class="d-panel__close" onclick="closePanel('crypto')" aria-label="Fechar">&#215;</button>
             </div>
             <div class="d-panel__body">
               <div class="d-info">
                 <div class="info-row crypto-row active" id="row-btc" onclick="selectCrypto('btc')">
-                  <span class="info-row__lbl">Bitcoin (BTC) &middot; Rede: BTC (Bitcoin)</span>
+                  <span class="info-row__lbl" data-i18n="crypto_btc">Bitcoin (BTC) &middot; Rede: BTC (Bitcoin)</span>
                   <span class="info-row__val">
                     <span id="btc">15w4YjGK39bJkF4u6wt1xyEm7WQJJdoph4</span>
                     <button class="copy-btn" onclick="copyText('btc', event); selectCrypto('btc')" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
                 <div class="info-row crypto-row" id="row-eth" onclick="selectCrypto('eth')">
-                  <span class="info-row__lbl">Ethereum (ETH) &middot; Rede: Ethereum (ERC-20)</span>
+                  <span class="info-row__lbl" data-i18n="crypto_eth">Ethereum (ETH) &middot; Rede: Ethereum (ERC-20)</span>
                   <span class="info-row__val">
                     <span id="eth">0xc615672922547a88cebc28d01e8112b5f3605830</span>
                     <button class="copy-btn" onclick="copyText('eth', event); selectCrypto('eth')" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
                   </span>
                 </div>
                 <div class="info-row crypto-row" id="row-sol" onclick="selectCrypto('sol')">
-                  <span class="info-row__lbl">Solana (SOL) &middot; Rede: Solana</span>
+                  <span class="info-row__lbl" data-i18n="crypto_sol">Solana (SOL) &middot; Rede: Solana</span>
                   <span class="info-row__val">
                     <span id="sol">9TmYnAetZindLo6C1H4k5Jhzf2btcpHqaoinqEteitgv</span>
                     <button class="copy-btn" onclick="copyText('sol', event); selectCrypto('sol')" title="Copiar"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
@@ -337,40 +347,38 @@
                 </div>
                 <div class="tags">
                   <span class="tag">BTC</span><span class="tag">ETH</span>
-                  <span class="tag">SOL</span><span class="tag">Anonimo</span>
+                  <span class="tag">SOL</span><span class="tag" data-i18n="tag_anon">Anonimo</span>
                 </div>
               </div>
               <div class="d-qr">
                 <img id="crypto-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=15w4YjGK39bJkF4u6wt1xyEm7WQJJdoph4&color=6c63ff&bgcolor=ffffff" alt="QR Code" />
                 <p id="crypto-qr-lbl">BTC address</p>
-                <span class="qr-notice">Clique em um endere&ccedil;o ao lado para exibir seu QR Code</span>
+                <span class="qr-notice" data-i18n="crypto_notice">Clique em um endere&ccedil;o ao lado para exibir seu QR Code</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Free support -->
+        <!-- Apoio Gratuito -->
         <div class="d-card" id="card-free">
-          <div class="d-card__icon">&#127775;</div>
-          <div class="d-card__title">Apoio gratuito</div>
-          <div class="d-card__desc">Sem dinheiro? Sem problema! Existem formas igualmente valiosas de ajudar o projeto.</div>
-          <button class="btn btn--ghost" onclick="togglePanel('free')">&#128161; Ver como ajudar</button>
+          <div class="d-card__icon">&#128156;</div>
+          <div class="d-card__title" data-i18n="free_title">Apoio gratuito</div>
+          <div class="d-card__desc" data-i18n="free_desc">Sem dinheiro? Sem problema! Existem formas igualmente valiosas de ajudar o projeto.</div>
+          <button class="btn btn--primary" onclick="togglePanel('free')" data-i18n="btn_view_help">&#128161; Ver como ajudar</button>
           <div class="d-panel" id="panel-free">
             <div class="d-panel__head">
-              <span class="d-panel__label">// formas gratuitas de contribuir</span>
+              <span class="d-panel__label" data-i18n="free_panel_lbl">// formas gratuitas de contribuir</span>
               <button class="d-panel__close" onclick="closePanel('free')" aria-label="Fechar">&#215;</button>
             </div>
-            <div class="d-panel__body">
-              <div class="d-info">
-                <ul class="free-list">
-                  <li>&#11088; De uma estrela nos repos do <a href="https://github.com/zAstergun" target="_blank" rel="noopener">GitHub</a></li>
-                  <li>&#128257; Compartilhe meus projetos com outros devs</li>
-                  <li>&#128027; Reporte bugs e abra issues</li>
-                  <li>&#128161; Sugira novas features e melhorias</li>
-                  <li>&#128221; Contribua com codigo &mdash; PRs sao bem-vindos!</li>
-                  <li>&#128483;&#65039; Fale sobre meu trabalho nas redes sociais</li>
-                </ul>
-              </div>
+            <div class="d-panel__body" style="grid-template-columns: 1fr;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; color: var(--text-2);">
+                <li data-i18n="free_1">&#11088; De uma estrela nos repos do GitHub</li>
+                <li data-i18n="free_2">&#128257; Compartilhe meus projetos com outros devs</li>
+                <li data-i18n="free_3">&#128027; Reporte bugs e abra issues</li>
+                <li data-i18n="free_4">&#128161; Sugira novas features e melhorias</li>
+                <li data-i18n="free_5">&#128221; Contribua com codigo &mdash; PRs sao bem-vindos!</li>
+                <li data-i18n="free_6">&#128103; Fale sobre meu trabalho nas redes sociais</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -382,7 +390,11 @@
   <!-- ── QUOTE ────────────────────────────────── -->
   <div class="container">
     <blockquote class="quote">
-      <p class="quote__text">"Cada linha de codigo que escrevo e feita com muito carinho para a comunidade. Seu apoio &mdash; financeiro ou um simples star no GitHub &mdash; me motiva a continuar criando ferramentas que tornam a vida dos devs mais facil e divertida."</p>
+      <p class="quote__text" data-i18n="quote">
+        "Cada linha de codigo que escrevo e feita com muito carinho pra comunidade.
+        Seu apoio &mdash; financeiro ou um simples star no GitHub &mdash; me motiva a continuar
+        criando ferramentas que tornam a vida dos devs mais facil e divertida."
+      </p>
       <cite class="quote__author">&mdash; Aster Dev &#10022;</cite>
     </blockquote>
   </div>
@@ -391,14 +403,14 @@
   <section class="section" id="supporters">
     <div class="container">
       <div class="sec-head">
-        <p class="sec-head__tag">hall da fama</p>
-        <h2 class="sec-head__title">Nossos <span class="accent">apoiadores</span></h2>
-        <p class="sec-head__sub">Obrigado a todas as pessoas incriveis que tornaram isso possivel. &#128156;</p>
-        <div class="sup-notice">
+        <p class="sec-head__tag" data-i18n="sec_sup_tag">hall da fama</p>
+        <h2 class="sec-head__title"><span data-i18n="sec_sup_title_1">Nossos</span> <span class="accent" data-i18n="sec_sup_title_2">apoiadores</span></h2>
+        <p class="sec-head__sub" data-i18n="sec_sup_sub">Obrigado a todas as pessoas incriveis que tornaram isso possivel. &#128156;</p>
+        <div class="sup-notice" data-i18n="sup_notice">
           Quer seu nome aqui? Envie o comprovante e o nome desejado para <a href="mailto:donate@asterdev.me">donate@asterdev.me</a> ou via Discord (<strong>douglasluiz</strong>).
         </div>
       </div>
-      <div class="empty-box">
+      <div class="empty-box" data-i18n="sup_empty">
         <span class="accent">// </span>Seja o primeiro a apoiar! Seu nome aparecera aqui. &#127775;
       </div>
       <!-- Para adicionar apoiadores, substitua o empty-box pelo bloco abaixo:
@@ -416,7 +428,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <p class="footer__copy">&#169; 2026 <a href="https://asterdev.me">Aster Dev</a> &middot; Feito com cansa&ccedil;o e fome</p>
+        <p class="footer__copy" data-i18n="footer_copy">&#169; 2026 <a href="https://asterdev.me">Aster Dev</a> &middot; Feito com cansa&ccedil;o e fome</p>
         <div class="footer__links">
           <a href="https://asterdev.me">Portfolio</a>
           <a href="https://github.com/zAstergun" target="_blank" rel="noopener">GitHub</a>
@@ -432,21 +444,21 @@
 <div class="modal-overlay" id="modal-duotools" onclick="if(event.target===this) closeModal('modal-duotools')">
   <div class="modal-content">
     <div class="modal-header">
-      <h3>Instalar Duo-Tools</h3>
+      <h3 data-i18n="modal_title">Instalar Duo-Tools</h3>
       <button class="modal-close" onclick="closeModal('modal-duotools')" aria-label="Fechar">&times;</button>
     </div>
     <div class="modal-body">
-      <a href="https://github.com/zAstergun/Duo-Tools/releases/download/v1.0.0/Duo-Tools.zip" class="btn btn--primary" style="width: 100%; justify-content: center; margin-bottom: 24px;">&#11015;&#65039; Baixar Duo-Tools.zip (v1.0.0)</a>
+      <a href="https://github.com/zAstergun/Duo-Tools/releases/download/v1.0.0/Duo-Tools.zip" class="btn btn--primary" style="width: 100%; justify-content: center; margin-bottom: 24px;" data-i18n="modal_btn">&#11015;&#65039; Baixar Duo-Tools.zip (v1.0.0)</a>
       
-      <h4>Como instalar:</h4>
+      <h4 data-i18n="modal_h4">Como instalar:</h4>
       <ol>
-        <li>Aperte no bot&atilde;o acima para baixar o arquivo oficial <code>Duo-Tools.zip</code> da &uacute;ltima vers&atilde;o.</li>
-        <li>Extraia (descompacte) o arquivo <code>.zip</code> baixado em uma pasta de f&aacute;cil acesso no seu computador.</li>
-        <li>Abra o Chrome e navegue para <code>chrome://extensions</code></li>
-        <li>Ative o <strong>Modo desenvolvedor</strong> (toggle no canto superior direito)</li>
-        <li>Clique em <strong>"Carregar sem compacta&ccedil;&atilde;o"</strong></li>
-        <li>Selecione a pasta <code>Duo-Tools</code> que voc&ecirc; acabou de extrair (&#9888;&#65039; Aten&ccedil;&atilde;o: selecione a pasta descompactada, e n&atilde;o o arquivo .zip).</li>
-        <li>Pronto! A extens&atilde;o aparecer&aacute; com o &iacute;cone de uma coruja escura com detalhes em &acirc;mbar/laranja na sua barra de ferramentas.</li>
+        <li data-i18n="modal_li_1">Aperte no bot&atilde;o acima para baixar o arquivo oficial <code>Duo-Tools.zip</code> da &uacute;ltima vers&atilde;o.</li>
+        <li data-i18n="modal_li_2">Extraia (descompacte) o arquivo <code>.zip</code> baixado em uma pasta de f&aacute;cil acesso no seu computador.</li>
+        <li data-i18n="modal_li_3">Abra o Chrome e navegue para <code>chrome://extensions</code></li>
+        <li data-i18n="modal_li_4">Ative o <strong>Modo desenvolvedor</strong> (toggle no canto superior direito)</li>
+        <li data-i18n="modal_li_5">Clique em <strong>"Carregar sem compacta&ccedil;&atilde;o"</strong></li>
+        <li data-i18n="modal_li_6">Selecione a pasta <code>Duo-Tools</code> que voc&ecirc; acabou de extrair (&#9888;&#65039; Aten&ccedil;&atilde;o: selecione a pasta descompactada, e n&atilde;o o arquivo .zip).</li>
+        <li data-i18n="modal_li_7">Pronto! A extens&atilde;o aparecer&aacute; com o &iacute;cone de uma coruja escura com detalhes em &acirc;mbar/laranja na sua barra de ferramentas.</li>
       </ol>
 
       <img src="assets/duo-tools/Duo-Tools.png" alt="Duo-Tools preview" loading="lazy" />
@@ -454,9 +466,9 @@
   </div>
 </div>
 
-<div class="toast" id="toast">&#10003; Copiado!</div>
+<div class="toast" id="toast" data-i18n="toast_copied">&#10003; Copiado!</div>
 
-<!-- Script -->
+<!-- SCRIPTS -->
 <script src="app.js"></script>
 </body>
 </html>

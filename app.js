@@ -191,4 +191,144 @@
     });
   }
 
+  /* ── i18n & Language Selection ───────────── */
+  var langBtn = document.getElementById('langBtn');
+  var langDropdown = document.getElementById('langDropdown');
+  var currentLangEl = document.getElementById('currentLang');
+  var localesDict = {}; // Will be populated dynamically via fetch
+
+  var langMap = {
+    'br': 'PT-BR', 'en': 'EN-US', 'es': 'ES', 'fr': 'FR',
+    'de': 'DE', 'it': 'IT', 'nl': 'NL', 'pt': 'PT-PT',
+    'id': 'ID', 'ru': 'RU', 'vn': 'VN', 'ar': 'AR',
+    'cn': 'CN', 'jp': 'JP', 'kr': 'KR'
+  };
+
+  // The available languages
+  var availableLangs = Object.keys(langMap);
+
+  function getBrowserLang() {
+    var l = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (l === 'pt-br') return 'br';
+    if (l.startsWith('pt')) return 'pt';
+    if (l.startsWith('zh')) return 'cn';
+    if (l.startsWith('ja')) return 'jp';
+    if (l.startsWith('ko')) return 'kr';
+    if (l.startsWith('vi')) return 'vn';
+    var shortLang = l.substring(0, 2);
+    if (availableLangs.indexOf(shortLang) > -1) return shortLang;
+    return 'en';
+  }
+
+  var currentLang = localStorage.getItem('lang') || 'en';
+
+  function applyLanguageDOM(lang, data) {
+    if (currentLangEl) currentLangEl.textContent = langMap[lang] || lang.toUpperCase();
+
+    // Update active state in dropdown
+    document.querySelectorAll('.lang-option').forEach(function(opt) {
+      if (opt.getAttribute('data-lang') === lang) opt.classList.add('active');
+      else opt.classList.remove('active');
+    });
+
+    // Translate DOM
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (data[key]) {
+        el.innerHTML = data[key]; 
+      }
+    });
+  }
+
+  function setLanguage(lang) {
+    if (availableLangs.indexOf(lang) === -1) lang = 'en';
+
+    // Se já temos em memória
+    if (localesDict[lang]) {
+      localStorage.setItem('lang', lang);
+      currentLang = lang;
+      applyLanguageDOM(lang, localesDict[lang]);
+      return;
+    }
+
+    // Carregar via Fetch
+    fetch('locales/' + lang + '.json')
+      .then(function(res) {
+        if (!res.ok) throw new Error('Failed to load locale');
+        return res.json();
+      })
+      .then(function(data) {
+        localesDict[lang] = data;
+        localStorage.setItem('lang', lang);
+        currentLang = lang;
+        applyLanguageDOM(lang, data);
+      })
+      .catch(function(err) {
+        console.error('Error loading language file:', err);
+      });
+  }
+
+  // Populate Dropdown
+  if (langDropdown) {
+    var langKeys = availableLangs.sort();
+    langKeys.forEach(function(l) {
+      var btn = document.createElement('button');
+      btn.className = 'lang-option' + (l === currentLang ? ' active' : '');
+      btn.setAttribute('data-lang', l);
+      btn.type = 'button';
+      btn.textContent = langMap[l] || l.toUpperCase();
+      btn.addEventListener('click', function() {
+        setLanguage(l);
+        langDropdown.classList.remove('show');
+      });
+      langDropdown.appendChild(btn);
+    });
+  }
+
+  // Toggle dropdown
+  if (langBtn && langDropdown) {
+    langBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      langDropdown.classList.toggle('show');
+    });
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+        langDropdown.classList.remove('show');
+      }
+    });
+  }
+
+  // Initial load logic with IP Geolocation
+  function initLanguage() {
+    var storedLang = localStorage.getItem('lang');
+    if (storedLang) {
+      currentLang = storedLang;
+      setLanguage(currentLang);
+    } else {
+      // Detect based on physical location (IP)
+      fetch('https://get.geojs.io/v1/ip/country.json')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          var countryMap = {
+            'BR': 'br', 'PT': 'pt', 
+            'ES': 'es', 'MX': 'es', 'AR': 'es', 'CO': 'es', 'CL': 'es', 'PE': 'es', 'VE': 'es',
+            'FR': 'fr', 'DE': 'de', 'IT': 'it', 'NL': 'nl', 'ID': 'id', 'RU': 'ru', 'VN': 'vn',
+            'SA': 'ar', 'AE': 'ar', 'EG': 'ar', 'MA': 'ar',
+            'CN': 'cn', 'TW': 'cn', 'HK': 'cn',
+            'JP': 'jp', 'KR': 'kr'
+          };
+          currentLang = countryMap[data.country] || getBrowserLang();
+          setLanguage(currentLang);
+        })
+        .catch(function(err) {
+          // Fallback to browser language if API fails
+          currentLang = getBrowserLang();
+          setLanguage(currentLang);
+        });
+    }
+  }
+
+  initLanguage();
+
 })();
