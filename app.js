@@ -238,6 +238,13 @@
         el.innerHTML = data[key]; 
       }
     });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-aria');
+      if (data[key]) {
+        el.setAttribute('aria-label', data[key]);
+      }
+    });
   }
 
   function setLanguage(lang) {
