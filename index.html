@@ -43,30 +43,28 @@
           <span class="logo__name"><em>Aster</em>Dev</span>
         </a>
 
-        <nav>
+        <nav style="display: flex; align-items: center; gap: 8px;">
           <ul class="nav__list" id="navList">
             <li><a href="https://asterdev.me" class="nav__link"><span class="hash">#</span><span data-i18n="nav_home">home</span></a></li>
             <li><a href="#projects"   class="nav__link"><span class="hash">#</span><span data-i18n="nav_projects">projetos</span></a></li>
             <li><a href="#ways"       class="nav__link"><span class="hash">#</span><span data-i18n="nav_support">apoiar</span></a></li>
             <li><a href="#supporters" class="nav__link"><span class="hash">#</span><span data-i18n="nav_supporters">apoiadores</span></a></li>
-            <li>
-              <div class="lang-selector" id="langSelector">
-                <button class="lang-btn" id="langBtn" type="button" aria-label="Mudar idioma">
-                  <span class="lang-icon">🌐</span> <span id="currentLang">PT-BR</span>
-                </button>
-                <div class="lang-dropdown" id="langDropdown">
-                  <!-- Populate via JS -->
-                </div>
-              </div>
-            </li>
-            <li>
-              <button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar tema">
-                <span id="themeIcon">&#127769;</span>
-                <span class="theme-toggle__box"></span>
-              </button>
-            </li>
           </ul>
-          <button class="nav__mob" id="mobBtn" type="button" aria-label="Menu">
+
+          <div class="lang-selector" id="langSelector">
+            <button class="lang-btn" id="langBtn" type="button" aria-label="Mudar idioma">
+              <span class="lang-icon">🌐</span> <span id="currentLang">PT-BR</span>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <!-- Populate via JS -->
+            </div>
+          </div>
+          
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Alternar tema" style="background: transparent; border: 1px solid var(--border); color: var(--text); font-size: 14px; padding: 4px 8px; border-radius: var(--radius-sm); cursor: pointer; transition: all var(--trans); display: flex; align-items: center; justify-content: center;">
+            <span id="themeIcon">&#127769;</span>
+          </button>
+          
+          <button class="nav__mob" id="mobBtn" type="button" aria-label="Menu" style="margin-left: 4px;">
             <span></span><span></span><span></span>
           </button>
         </nav>
@@ -103,7 +101,7 @@
             <span class="code-bar__file">support.ts</span>
           </div>
           <div class="code-body">
-            <div class="cl"><span class="ln">1</span><span class="cmt">// &#10022; Aster Dev &mdash; support</span></div>
+            <div class="cl"><span class="ln">1</span><span class="cmt" data-i18n="code_comment">// &#10022; Aster Dev &mdash; support</span></div>
             <div class="cl"><span class="ln">2</span><span></span></div>
             <div class="cl"><span class="ln">3</span><span class="kw">interface</span><span class="tx"> </span><span class="fn">Supporter</span><span class="tx"> {</span></div>
             <div class="cl"><span class="ln">4</span><span class="tx">&nbsp;&nbsp;name:&nbsp;&nbsp; </span><span class="kw">string</span><span class="tx">;</span></div>
@@ -112,11 +110,11 @@
             <div class="cl"><span class="ln">7</span><span class="tx">}</span></div>
             <div class="cl"><span class="ln">8</span><span></span></div>
             <div class="cl"><span class="ln">9</span><span class="kw">const</span><span class="tx"> </span><span class="fn">donate</span><span class="tx"> = (</span><span class="acc">you</span><span class="tx">: </span><span class="fn">Supporter</span><span class="tx">) =&gt; {</span></div>
-            <div class="cl"><span class="ln">10</span><span class="tx">&nbsp;&nbsp;return </span><span class="str">"muito obrigado &#128156;"</span><span class="tx">;</span></div>
+            <div class="cl"><span class="ln">10</span><span class="tx">&nbsp;&nbsp;return </span><span class="str" data-i18n="code_return">"muito obrigado &#128156;"</span><span class="tx">;</span></div>
             <div class="cl"><span class="ln">11</span><span class="tx">};</span></div>
             <div class="cl"><span class="ln">12</span><span></span></div>
             <div class="cl"><span class="ln">13</span><span class="fn">donate</span><span class="tx">({</span></div>
-            <div class="cl"><span class="ln">14</span><span class="tx">&nbsp;&nbsp;name: </span><span class="str">"voce"</span><span class="tx">,</span></div>
+            <div class="cl"><span class="ln">14</span><span class="tx">&nbsp;&nbsp;name: </span><span class="str" data-i18n="code_name">"voce"</span><span class="tx">,</span></div>
             <div class="cl"><span class="ln">15</span><span class="tx">&nbsp;&nbsp;amount: </span><span class="num">any</span><span class="tx">, impact: </span><span class="str">"huge"</span></div>
             <div class="cl"><span class="ln">16</span><span class="tx">});</span></div>
           </div>
